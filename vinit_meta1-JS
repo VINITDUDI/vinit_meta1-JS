@@ -1,0 +1,43 @@
+// Step 1: Create a variable to hold your NFTs
+let nftCollection = [];
+
+// Step 2: Function to mint a new NFT (IPL team)
+function mintNFT(name, homeCity) {
+  // Create an NFT object with IPL team metadata
+  let nft = {
+    name: name,
+    homeCity: homeCity
+  };
+  
+  // Store the new NFT in the nftCollection array
+  nftCollection.push(nft);
+}
+
+// Step 3: Function to list all NFTs (IPL teams)
+function listNFTs() {
+  // Loop through the nftCollection array and print the metadata of each NFT
+  nftCollection.forEach((nft, index) => {
+    console.log(`NFT ${index + 1}:`);
+    console.log(`  Name: ${nft.name}`);
+    console.log(`  Home City: ${nft.homeCity}`);
+    console.log('-------------------------');
+  });
+}
+
+// Step 4: Function to get the total supply of NFTs
+function getTotalSupply() {
+  return nftCollection.length;
+}
+
+// Step 5: Call the functions to test them
+
+// Minting three NFTs (IPL teams)
+mintNFT("Mumbai Indians", "Mumbai");
+mintNFT("Chennai Super Kings", "Chennai");
+mintNFT("Royal Challengers Bangalore", "Bangalore");
+
+// Listing all NFTs (IPL teams)
+listNFTs();
+
+// Getting the total supply of NFTs
+console.log(`Total Supply: ${getTotalSupply()}`);
